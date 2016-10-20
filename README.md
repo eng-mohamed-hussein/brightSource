@@ -1,2 +1,2 @@
 # brightSource
-bright source project in NTI
+brightsource project in NTI,Egypt
