@@ -34,4 +34,16 @@ void delay_ms(uint32_t time)
 	 /* clear timer finish flag to be able to count back again and that by forcing one */
 		setBit(TIMER0 -> ICR,BIT0);
 }
- 
+
+void delay_us(uint32_t time)
+ {
+	 /* setting timer equation to be meassured in microseconds*/
+	  time =(uint32_t) time * (SystemCoreClock/1000000);
+	 /* configure the TIMER0 with the value i want it to count */ 
+		TIMER0->TAILR = time;		
+		setBit(TIMER0 -> CTL,BIT0);
+	 /* checking if TIMER0 finished */
+		while(checkBit(TIMER0 -> RIS,BIT0) != 1);
+	 /* clear timer finish flag to be able to count back again and that by forcing one */
+		setBit(TIMER0 -> ICR,BIT0);
+}

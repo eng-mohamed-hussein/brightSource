@@ -53,5 +53,7 @@
  */
 void initDelayTimer(void);
 
-/*This function take the required time to be delayed in ms*/
+/*This function take the required time to be delayed in milliseconds*/
 void delay_ms(uint32_t time);
+/*This function take the required time to be delayed in microseconds */
+void delay_us(uint32_t time);
