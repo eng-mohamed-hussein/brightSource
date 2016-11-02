@@ -1,0 +1,184 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.21.1.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: asd Microsoft, Microsoft, LIC=CRMHL-0GQQN-8WJ2D-8FIWY-PF186-DQIQU
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.21a
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 3 (build 300)
+Assembler:       Armasm.exe V5.06 update 3 (build 300)
+Linker/Locator:  ArmLink.exe V5.06 update 3 (build 300)
+Library Manager: ArmAr.exe V5.06 update 3 (build 300)
+Hex Converter:   FromElf.exe V5.06 update 3 (build 300)
+CPU DLL:         SARMCM3.DLL V5.21a
+Dialog DLL:      DCM.DLL V1.13.8.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.14.14.0
+ 
+<h2>Project:</h2>
+D:\i2cv2\ver2.uvprojx
+Project File Date:  11/01/2016
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Target 1'
+compiling main.c...
+inc/hw_memmap.h(51): warning:  #47-D: incompatible redefinition of macro "WATCHDOG0_BASE" (declared at line 1543 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define WATCHDOG0_BASE          0x40000000  // Watchdog0
+inc/hw_memmap.h(52): warning:  #47-D: incompatible redefinition of macro "WATCHDOG1_BASE" (declared at line 1544 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define WATCHDOG1_BASE          0x40001000  // Watchdog1
+inc/hw_memmap.h(57): warning:  #47-D: incompatible redefinition of macro "SSI0_BASE" (declared at line 1549 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define SSI0_BASE               0x40008000  // SSI0
+inc/hw_memmap.h(58): warning:  #47-D: incompatible redefinition of macro "SSI1_BASE" (declared at line 1550 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define SSI1_BASE               0x40009000  // SSI1
+inc/hw_memmap.h(59): warning:  #47-D: incompatible redefinition of macro "SSI2_BASE" (declared at line 1551 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define SSI2_BASE               0x4000A000  // SSI2
+inc/hw_memmap.h(60): warning:  #47-D: incompatible redefinition of macro "SSI3_BASE" (declared at line 1552 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define SSI3_BASE               0x4000B000  // SSI3
+inc/hw_memmap.h(61): warning:  #47-D: incompatible redefinition of macro "UART0_BASE" (declared at line 1553 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define UART0_BASE              0x4000C000  // UART0
+inc/hw_memmap.h(62): warning:  #47-D: incompatible redefinition of macro "UART1_BASE" (declared at line 1554 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define UART1_BASE              0x4000D000  // UART1
+inc/hw_memmap.h(63): warning:  #47-D: incompatible redefinition of macro "UART2_BASE" (declared at line 1555 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define UART2_BASE              0x4000E000  // UART2
+inc/hw_memmap.h(64): warning:  #47-D: incompatible redefinition of macro "UART3_BASE" (declared at line 1556 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define UART3_BASE              0x4000F000  // UART3
+inc/hw_memmap.h(65): warning:  #47-D: incompatible redefinition of macro "UART4_BASE" (declared at line 1557 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define UART4_BASE              0x40010000  // UART4
+inc/hw_memmap.h(66): warning:  #47-D: incompatible redefinition of macro "UART5_BASE" (declared at line 1558 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define UART5_BASE              0x40011000  // UART5
+inc/hw_memmap.h(67): warning:  #47-D: incompatible redefinition of macro "UART6_BASE" (declared at line 1559 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define UART6_BASE              0x40012000  // UART6
+inc/hw_memmap.h(68): warning:  #47-D: incompatible redefinition of macro "UART7_BASE" (declared at line 1560 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define UART7_BASE              0x40013000  // UART7
+inc/hw_memmap.h(69): warning:  #47-D: incompatible redefinition of macro "I2C0_BASE" (declared at line 1561 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define I2C0_BASE               0x40020000  // I2C0
+inc/hw_memmap.h(70): warning:  #47-D: incompatible redefinition of macro "I2C1_BASE" (declared at line 1562 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define I2C1_BASE               0x40021000  // I2C1
+inc/hw_memmap.h(71): warning:  #47-D: incompatible redefinition of macro "I2C2_BASE" (declared at line 1563 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define I2C2_BASE               0x40022000  // I2C2
+inc/hw_memmap.h(72): warning:  #47-D: incompatible redefinition of macro "I2C3_BASE" (declared at line 1564 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define I2C3_BASE               0x40023000  // I2C3
+inc/hw_memmap.h(77): warning:  #47-D: incompatible redefinition of macro "PWM0_BASE" (declared at line 1567 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define PWM0_BASE               0x40028000  // Pulse Width Modulator (PWM)
+inc/hw_memmap.h(78): warning:  #47-D: incompatible redefinition of macro "PWM1_BASE" (declared at line 1568 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define PWM1_BASE               0x40029000  // Pulse Width Modulator (PWM)
+inc/hw_memmap.h(79): warning:  #47-D: incompatible redefinition of macro "QEI0_BASE" (declared at line 1569 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define QEI0_BASE               0x4002C000  // QEI0
+inc/hw_memmap.h(80): warning:  #47-D: incompatible redefinition of macro "QEI1_BASE" (declared at line 1570 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define QEI1_BASE               0x4002D000  // QEI1
+inc/hw_memmap.h(81): warning:  #47-D: incompatible redefinition of macro "TIMER0_BASE" (declared at line 1571 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define TIMER0_BASE             0x40030000  // Timer0
+inc/hw_memmap.h(82): warning:  #47-D: incompatible redefinition of macro "TIMER1_BASE" (declared at line 1572 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define TIMER1_BASE             0x40031000  // Timer1
+inc/hw_memmap.h(83): warning:  #47-D: incompatible redefinition of macro "TIMER2_BASE" (declared at line 1573 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define TIMER2_BASE             0x40032000  // Timer2
+inc/hw_memmap.h(84): warning:  #47-D: incompatible redefinition of macro "TIMER3_BASE" (declared at line 1574 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define TIMER3_BASE             0x40033000  // Timer3
+inc/hw_memmap.h(85): warning:  #47-D: incompatible redefinition of macro "TIMER4_BASE" (declared at line 1575 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define TIMER4_BASE             0x40034000  // Timer4
+inc/hw_memmap.h(86): warning:  #47-D: incompatible redefinition of macro "TIMER5_BASE" (declared at line 1576 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define TIMER5_BASE             0x40035000  // Timer5
+inc/hw_memmap.h(87): warning:  #47-D: incompatible redefinition of macro "WTIMER0_BASE" (declared at line 1577 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define WTIMER0_BASE            0x40036000  // Wide Timer0
+inc/hw_memmap.h(88): warning:  #47-D: incompatible redefinition of macro "WTIMER1_BASE" (declared at line 1578 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define WTIMER1_BASE            0x40037000  // Wide Timer1
+inc/hw_memmap.h(89): warning:  #47-D: incompatible redefinition of macro "ADC0_BASE" (declared at line 1579 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define ADC0_BASE               0x40038000  // ADC0
+inc/hw_memmap.h(90): warning:  #47-D: incompatible redefinition of macro "ADC1_BASE" (declared at line 1580 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define ADC1_BASE               0x40039000  // ADC1
+inc/hw_memmap.h(91): warning:  #47-D: incompatible redefinition of macro "COMP_BASE" (declared at line 1581 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define COMP_BASE               0x4003C000  // Analog comparators
+inc/hw_memmap.h(93): warning:  #47-D: incompatible redefinition of macro "CAN0_BASE" (declared at line 1582 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define CAN0_BASE               0x40040000  // CAN0
+inc/hw_memmap.h(94): warning:  #47-D: incompatible redefinition of macro "CAN1_BASE" (declared at line 1583 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define CAN1_BASE               0x40041000  // CAN1
+inc/hw_memmap.h(95): warning:  #47-D: incompatible redefinition of macro "WTIMER2_BASE" (declared at line 1584 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define WTIMER2_BASE            0x4004C000  // Wide Timer2
+inc/hw_memmap.h(96): warning:  #47-D: incompatible redefinition of macro "WTIMER3_BASE" (declared at line 1585 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define WTIMER3_BASE            0x4004D000  // Wide Timer3
+inc/hw_memmap.h(97): warning:  #47-D: incompatible redefinition of macro "WTIMER4_BASE" (declared at line 1586 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define WTIMER4_BASE            0x4004E000  // Wide Timer4
+inc/hw_memmap.h(98): warning:  #47-D: incompatible redefinition of macro "WTIMER5_BASE" (declared at line 1587 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define WTIMER5_BASE            0x4004F000  // Wide Timer5
+inc/hw_memmap.h(99): warning:  #47-D: incompatible redefinition of macro "USB0_BASE" (declared at line 1588 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define USB0_BASE               0x40050000  // USB 0 Controller
+inc/hw_memmap.h(121): warning:  #47-D: incompatible redefinition of macro "EEPROM_BASE" (declared at line 1595 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define EEPROM_BASE             0x400AF000  // EEPROM memory
+inc/hw_memmap.h(133): warning:  #47-D: incompatible redefinition of macro "SYSEXC_BASE" (declared at line 1596 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define SYSEXC_BASE             0x400F9000  // System Exception Module
+inc/hw_memmap.h(134): warning:  #47-D: incompatible redefinition of macro "HIB_BASE" (declared at line 1597 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define HIB_BASE                0x400FC000  // Hibernation Module
+inc/hw_memmap.h(135): warning:  #47-D: incompatible redefinition of macro "FLASH_CTRL_BASE" (declared at line 1598 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define FLASH_CTRL_BASE         0x400FD000  // FLASH Controller
+inc/hw_memmap.h(136): warning:  #47-D: incompatible redefinition of macro "SYSCTL_BASE" (declared at line 1599 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define SYSCTL_BASE             0x400FE000  // System Control
+inc/hw_memmap.h(137): warning:  #47-D: incompatible redefinition of macro "UDMA_BASE" (declared at line 1600 of "C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123\tm4c123gh6pm.h")
+  #define UDMA_BASE               0x400FF000  // uDMA Controller
+inc/hw_memmap.h(145): warning:  #47-D: incompatible redefinition of macro "ITM_BASE" (declared at line 1534 of "C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h")
+  #define ITM_BASE                0xE0000000  // Instrumentation Trace Macrocell
+inc/hw_memmap.h(146): warning:  #47-D: incompatible redefinition of macro "DWT_BASE" (declared at line 1535 of "C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h")
+  #define DWT_BASE                0xE0001000  // Data Watchpoint and Trace
+inc/hw_memmap.h(148): warning:  #47-D: incompatible redefinition of macro "NVIC_BASE" (declared at line 1539 of "C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h")
+  #define NVIC_BASE               0xE000E000  // Nested Vectored Interrupt Ctrl
+timeouttimer.h(6): warning:  #1-D: last line of file ends without a newline
+  void timeOut_ms(uint32_t time);
+main.c(180): warning:  #174-D: expression has no effect
+  				isReceived==
+ALSE;//---------------------------------------
+main.c(208): warning:  #111-D: statement is unreachable
+  	return 0;
+main.c(233): warning:  #68-D: integer conversion resulted in a change of sign
+  					hDirection=
+P_DIRECTION;
+main.c(234): warning:  #68-D: integer conversion resulted in a change of sign
+  					vDirection=
+IGTH_DIRECTION;
+main.c(253): warning:  #1-D: last line of file ends without a newline
+  }
+main.c: 55 warnings, 0 errors
+linking...
+Program Size: Code=4320 RO-data=1496 RW-data=44 ZI-data=612  
+".\Objects\ver2.axf" - 0 Error(s), 55 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM::CMSIS:CORE:4.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 4.3.0
+   * Component: DSP Version: 1.4.6
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil::Device:Startup:1.0.1
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  D:\i2cv2\RTE
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:4.3.0
+
+   * Component: ARM::CMSIS:DSP:1.4.6
+      Include file:  CMSIS\Include\arm_math.h
+      Library file:  CMSIS\Lib\ARM\arm_cortexM4lf_math.lib
+
+   * Component: Keil::Device:Startup:1.0.1
+      Include file:  Device\Include\TM4C123\TM4C123.h
+      Source file:   Device\Source\ARM\startup_TM4C123.s
+      Source file:   Device\Source\system_TM4C123.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
