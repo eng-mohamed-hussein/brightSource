@@ -4,9 +4,9 @@
 /*holding node current state*/
 states nodeState;
 /*holding horizontal angle*/
-uint8_t hAngle;
+int8_t hAngle;
 /*vertical angle*/
-uint8_t vAngle;
+int8_t vAngle;
 /*current power value*/
 uint8_t currentPower;
 /*for looping in scanning*/
@@ -33,10 +33,13 @@ uint8_t hSteps;
 uint8_t vSteps;
 uint8_t hDirection;
 uint8_t vDirection;
-/*sun absolute x pos*/
-uint8_t sunXPosition;
-/*sun absolute y pos*/
-uint8_t sunYPosition;
+
+
+
+//sun position 
+uint8_t sunPositions[2];/////////
+
+
 /*node absolute x pos*/
 uint8_t nodeXPosition;
 /*node absolute y pos*/
@@ -66,7 +69,7 @@ void initSystem()
 	initTimeOutTimer();//---------------------------
 	
 	//init system varibales
-	nodeState = NEGOTIATION ;//startup state for noraml system
+	nodeState = WAITING ;//startup state for testint only
 //	nodeState = STARTUP ;
 	nodeXPosition=NODE_X_POSITION;
 	nodeYPosition=NODE_Y_POSITION;
@@ -79,10 +82,8 @@ void initSystem()
 	vIndex=1;
 	isMaster=TRUE;
 	receivedPower=0;
+	
 	i2c1GotoSlaveMode();//------------------
-//start negotiation timer
-
-timeOut_ms(NEGOTIATION_TIMEOUT);//------------------
 
 
 }
@@ -164,7 +165,7 @@ void moveToHorizontally(int16_t angle)
 /*********************************************************************/
 /*NOT completed function*/
 /*Send the power and then ****WHAT******/
-void sendPower(uint8_t p)
+void sendData(uint8_t p)
 {
 	i2c1SendMaster(p,NODE_ID);
 	/*use goto slave funtion or not*/
@@ -180,6 +181,7 @@ void sendPosition(uint8_t x,uint8_t y)
 	dataBuffer[1]	= y	;
   i2c1SendMasterMultiBytes(dataBuffer,2,NODE_ID);
 	/*use goto slave funtion or not*/
+	i2c1GotoSlaveMode();
 }
 /*********************************************************************/
 float getAngle(float height ,float angle,uint8_t shift)// need revision

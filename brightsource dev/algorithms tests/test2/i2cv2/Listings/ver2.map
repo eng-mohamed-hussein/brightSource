@@ -15,7 +15,7 @@ Section Cross References
     main.o(i.main) refers to main.o(i.InitConsole) for InitConsole
     main.o(i.main) refers to uartstdio.o(i.UARTprintf) for UARTprintf
     main.o(i.main) refers to node.o(i.initSystem) for initSystem
-    main.o(i.main) refers to node.o(i.sendPower) for sendPower
+    main.o(i.main) refers to node.o(i.sendData) for sendData
     main.o(i.main) refers to node.o(i.readLDR) for readLDR
     main.o(i.main) refers to node.o(i.setState) for setState
     main.o(i.main) refers to timeouttimer.o(i.timeOut_ms) for timeOut_ms
@@ -116,16 +116,16 @@ Section Cross References
     node.o(i.initSystem) refers to node.o(i.moveToHorizontally) for moveToHorizontally
     node.o(i.initSystem) refers to node.o(i.readLDR) for readLDR
     node.o(i.initSystem) refers to i2cdriver.o(i.i2c1GotoSlaveMode) for i2c1GotoSlaveMode
-    node.o(i.initSystem) refers to timeouttimer.o(i.timeOut_ms) for timeOut_ms
     node.o(i.initSystem) refers to node.o(.data) for nodeState
     node.o(i.moveStepHorizontally) refers to node.o(.data) for hAngle
     node.o(i.moveStepVertically) refers to node.o(.data) for vAngle
     node.o(i.moveToHorizontally) refers to node.o(.data) for hAngle
     node.o(i.moveToVertically) refers to node.o(.data) for vAngle
     node.o(i.readLDR) refers to adc1.o(i.readADC1) for readADC1
+    node.o(i.sendData) refers to i2cdriver.o(i.i2c1SendMaster) for i2c1SendMaster
+    node.o(i.sendData) refers to i2cdriver.o(i.i2c1GotoSlaveMode) for i2c1GotoSlaveMode
     node.o(i.sendPosition) refers to i2cdriver.o(i.i2c1SendMasterMultiBytes) for i2c1SendMasterMultiBytes
-    node.o(i.sendPower) refers to i2cdriver.o(i.i2c1SendMaster) for i2c1SendMaster
-    node.o(i.sendPower) refers to i2cdriver.o(i.i2c1GotoSlaveMode) for i2c1GotoSlaveMode
+    node.o(i.sendPosition) refers to i2cdriver.o(i.i2c1GotoSlaveMode) for i2c1GotoSlaveMode
     node.o(i.setState) refers to node.o(.data) for nodeState
     timeouttimer.o(i.timeOut_ms) refers to system_tm4c123.o(.data) for SystemCoreClock
     startup_tm4c123.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
@@ -709,9 +709,9 @@ Removing Unused input sections from the image.
     Removing node.o(.rrx_text), (6 bytes).
     Removing node.o(i.getAngle), (98 bytes).
     Removing node.o(i.getLength), (104 bytes).
-    Removing node.o(i.moveStepHorizontally), (40 bytes).
-    Removing node.o(i.moveStepVertically), (40 bytes).
-    Removing node.o(i.sendPosition), (26 bytes).
+    Removing node.o(i.moveStepHorizontally), (44 bytes).
+    Removing node.o(i.moveStepVertically), (44 bytes).
+    Removing node.o(i.sendPosition), (30 bytes).
     Removing timeouttimer.o(.rev16_text), (4 bytes).
     Removing timeouttimer.o(.revsh_text), (4 bytes).
     Removing timeouttimer.o(.rrx_text), (6 bytes).
@@ -781,7 +781,7 @@ Removing Unused input sections from the image.
     Removing interrupt.o(i._IntDefaultHandler), (2 bytes).
     Removing interrupt.o(vtable), (620 bytes).
 
-266 unused section(s) (total 11793 bytes) removed from the image.
+266 unused section(s) (total 11805 bytes) removed from the image.
 
 ==============================================================================
 
@@ -979,33 +979,33 @@ Image Symbol Table
     i.initADC1                               0x00000e74   Section        0  adc1.o(i.initADC1)
     i.initDelayTimer                         0x00000ee8   Section        0  basics.o(i.initDelayTimer)
     i.initSystem                             0x00000f28   Section        0  node.o(i.initSystem)
-    i.initTimeOutTimer                       0x00000fb4   Section        0  timeouttimer.o(i.initTimeOutTimer)
-    i.main                                   0x00000ff4   Section        0  main.o(i.main)
-    i.moveToHorizontally                     0x0000129c   Section        0  node.o(i.moveToHorizontally)
-    i.moveToVertically                       0x000012a8   Section        0  node.o(i.moveToVertically)
-    i.readADC1                               0x000012b4   Section        0  adc1.o(i.readADC1)
-    i.readLDR                                0x000012cc   Section        0  node.o(i.readLDR)
-    i.sendPower                              0x000012d8   Section        0  node.o(i.sendPower)
-    i.setState                               0x000012ec   Section        0  node.o(i.setState)
-    i.timeOut_ms                             0x000012f8   Section        0  timeouttimer.o(i.timeOut_ms)
-    x$fpl$fpinit                             0x00001340   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x00001340   Number         0  fpinit.o(x$fpl$fpinit)
-    .constdata                               0x0000134c   Section       28  uartstdio.o(.constdata)
-    g_pcHex                                  0x0000134c   Data           4  uartstdio.o(.constdata)
-    g_ui32UARTBase                           0x00001350   Data          12  uartstdio.o(.constdata)
-    g_ui32UARTPeriph                         0x0000135c   Data          12  uartstdio.o(.constdata)
-    .constdata                               0x00001368   Section      528  gpio.o(.constdata)
-    g_ppui32GPIOIntMapBlizzard               0x00001368   Data         192  gpio.o(.constdata)
-    g_ppui32GPIOIntMapSnowflake              0x00001428   Data         192  gpio.o(.constdata)
-    g_pui32GPIOBaseAddrs                     0x000014e8   Data         144  gpio.o(.constdata)
-    .constdata                               0x00001578   Section      268  interrupt.o(.constdata)
-    g_pui32Priority                          0x00001578   Data          32  interrupt.o(.constdata)
-    g_pui32Regs                              0x00001598   Data         156  interrupt.o(.constdata)
-    g_pui32EnRegs                            0x00001634   Data          20  interrupt.o(.constdata)
-    g_pui32Dii16Regs                         0x00001648   Data          20  interrupt.o(.constdata)
-    g_pui32PendRegs                          0x0000165c   Data          20  interrupt.o(.constdata)
-    g_pui32UnpendRegs                        0x00001670   Data          20  interrupt.o(.constdata)
-    .conststring                             0x00001684   Section       17  uartstdio.o(.conststring)
+    i.initTimeOutTimer                       0x00000fac   Section        0  timeouttimer.o(i.initTimeOutTimer)
+    i.main                                   0x00000fec   Section        0  main.o(i.main)
+    i.moveToHorizontally                     0x00001294   Section        0  node.o(i.moveToHorizontally)
+    i.moveToVertically                       0x000012a0   Section        0  node.o(i.moveToVertically)
+    i.readADC1                               0x000012ac   Section        0  adc1.o(i.readADC1)
+    i.readLDR                                0x000012c4   Section        0  node.o(i.readLDR)
+    i.sendData                               0x000012d0   Section        0  node.o(i.sendData)
+    i.setState                               0x000012e4   Section        0  node.o(i.setState)
+    i.timeOut_ms                             0x000012f0   Section        0  timeouttimer.o(i.timeOut_ms)
+    x$fpl$fpinit                             0x00001338   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x00001338   Number         0  fpinit.o(x$fpl$fpinit)
+    .constdata                               0x00001344   Section       28  uartstdio.o(.constdata)
+    g_pcHex                                  0x00001344   Data           4  uartstdio.o(.constdata)
+    g_ui32UARTBase                           0x00001348   Data          12  uartstdio.o(.constdata)
+    g_ui32UARTPeriph                         0x00001354   Data          12  uartstdio.o(.constdata)
+    .constdata                               0x00001360   Section      528  gpio.o(.constdata)
+    g_ppui32GPIOIntMapBlizzard               0x00001360   Data         192  gpio.o(.constdata)
+    g_ppui32GPIOIntMapSnowflake              0x00001420   Data         192  gpio.o(.constdata)
+    g_pui32GPIOBaseAddrs                     0x000014e0   Data         144  gpio.o(.constdata)
+    .constdata                               0x00001570   Section      268  interrupt.o(.constdata)
+    g_pui32Priority                          0x00001570   Data          32  interrupt.o(.constdata)
+    g_pui32Regs                              0x00001590   Data         156  interrupt.o(.constdata)
+    g_pui32EnRegs                            0x0000162c   Data          20  interrupt.o(.constdata)
+    g_pui32Dii16Regs                         0x00001640   Data          20  interrupt.o(.constdata)
+    g_pui32PendRegs                          0x00001654   Data          20  interrupt.o(.constdata)
+    g_pui32UnpendRegs                        0x00001668   Data          20  interrupt.o(.constdata)
+    .conststring                             0x0000167c   Section       17  uartstdio.o(.conststring)
     .data                                    0x20000000   Section        5  uartstdio.o(.data)
     g_ui32Base                               0x20000000   Data           4  uartstdio.o(.data)
     bLastWasCR                               0x20000004   Data           1  uartstdio.o(.data)
@@ -1260,21 +1260,21 @@ Image Symbol Table
     i2c1SendMaster                           0x00000e35   Thumb Code    56  i2cdriver.o(i.i2c1SendMaster)
     initADC1                                 0x00000e75   Thumb Code   100  adc1.o(i.initADC1)
     initDelayTimer                           0x00000ee9   Thumb Code    54  basics.o(i.initDelayTimer)
-    initSystem                               0x00000f29   Thumb Code   100  node.o(i.initSystem)
-    initTimeOutTimer                         0x00000fb5   Thumb Code    54  timeouttimer.o(i.initTimeOutTimer)
-    main                                     0x00000ff5   Thumb Code   276  main.o(i.main)
-    moveToHorizontally                       0x0000129d   Thumb Code     6  node.o(i.moveToHorizontally)
-    moveToVertically                         0x000012a9   Thumb Code     6  node.o(i.moveToVertically)
-    readADC1                                 0x000012b5   Thumb Code    14  adc1.o(i.readADC1)
-    readLDR                                  0x000012cd   Thumb Code    12  node.o(i.readLDR)
-    sendPower                                0x000012d9   Thumb Code    18  node.o(i.sendPower)
-    setState                                 0x000012ed   Thumb Code     6  node.o(i.setState)
-    timeOut_ms                               0x000012f9   Thumb Code    58  timeouttimer.o(i.timeOut_ms)
-    _fp_init                                 0x00001341   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x00001349   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x00001349   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x00001698   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000016b8   Number         0  anon$$obj.o(Region$$Table)
+    initSystem                               0x00000f29   Thumb Code    92  node.o(i.initSystem)
+    initTimeOutTimer                         0x00000fad   Thumb Code    54  timeouttimer.o(i.initTimeOutTimer)
+    main                                     0x00000fed   Thumb Code   276  main.o(i.main)
+    moveToHorizontally                       0x00001295   Thumb Code     8  node.o(i.moveToHorizontally)
+    moveToVertically                         0x000012a1   Thumb Code     8  node.o(i.moveToVertically)
+    readADC1                                 0x000012ad   Thumb Code    14  adc1.o(i.readADC1)
+    readLDR                                  0x000012c5   Thumb Code    12  node.o(i.readLDR)
+    sendData                                 0x000012d1   Thumb Code    18  node.o(i.sendData)
+    setState                                 0x000012e5   Thumb Code     6  node.o(i.setState)
+    timeOut_ms                               0x000012f1   Thumb Code    58  timeouttimer.o(i.timeOut_ms)
+    _fp_init                                 0x00001339   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x00001341   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x00001341   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x00001690   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000016b0   Number         0  anon$$obj.o(Region$$Table)
     nodeState                                0x2000000c   Data           1  node.o(.data)
     hAngle                                   0x2000000d   Data           1  node.o(.data)
     vAngle                                   0x2000000e   Data           1  node.o(.data)
@@ -1293,8 +1293,7 @@ Image Symbol Table
     vSteps                                   0x2000001b   Data           1  node.o(.data)
     hDirection                               0x2000001c   Data           1  node.o(.data)
     vDirection                               0x2000001d   Data           1  node.o(.data)
-    sunXPosition                             0x2000001e   Data           1  node.o(.data)
-    sunYPosition                             0x2000001f   Data           1  node.o(.data)
+    sunPositions                             0x2000001e   Data           2  node.o(.data)
     nodeXPosition                            0x20000020   Data           1  node.o(.data)
     nodeYPosition                            0x20000021   Data           1  node.o(.data)
     receivedPower                            0x20000022   Data           1  node.o(.data)
@@ -1313,9 +1312,9 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000016e4, Max: 0x00040000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x000016dc, Max: 0x00040000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x000016b8, Max: 0x00040000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x00000000, Size: 0x000016b0, Max: 0x00040000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1408,25 +1407,25 @@ Memory Map of the image
     0x00000e34   0x00000040   Code   RO         1304    i.i2c1SendMaster    i2cdriver.o
     0x00000e74   0x00000074   Code   RO         1219    i.initADC1          adc1.o
     0x00000ee8   0x00000040   Code   RO         1254    i.initDelayTimer    basics.o
-    0x00000f28   0x0000008c   Code   RO         1473    i.initSystem        node.o
-    0x00000fb4   0x00000040   Code   RO         1561    i.initTimeOutTimer  timeouttimer.o
-    0x00000ff4   0x000002a8   Code   RO            6    i.main              main.o
-    0x0000129c   0x0000000c   Code   RO         1476    i.moveToHorizontally  node.o
-    0x000012a8   0x0000000c   Code   RO         1477    i.moveToVertically  node.o
-    0x000012b4   0x00000018   Code   RO         1220    i.readADC1          adc1.o
-    0x000012cc   0x0000000c   Code   RO         1478    i.readLDR           node.o
-    0x000012d8   0x00000012   Code   RO         1480    i.sendPower         node.o
-    0x000012ea   0x00000002   PAD
-    0x000012ec   0x0000000c   Code   RO         1481    i.setState          node.o
-    0x000012f8   0x00000048   Code   RO         1562    i.timeOut_ms        timeouttimer.o
-    0x00001340   0x0000000a   Code   RO         2288    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x0000134a   0x00000002   PAD
-    0x0000134c   0x0000001c   Data   RO          141    .constdata          uartstdio.o
-    0x00001368   0x00000210   Data   RO         1701    .constdata          driverlib.lib(gpio.o)
-    0x00001578   0x0000010c   Data   RO         1983    .constdata          driverlib.lib(interrupt.o)
-    0x00001684   0x00000011   Data   RO          142    .conststring        uartstdio.o
-    0x00001695   0x00000003   PAD
-    0x00001698   0x00000020   Data   RO         2356    Region$$Table       anon$$obj.o
+    0x00000f28   0x00000084   Code   RO         1473    i.initSystem        node.o
+    0x00000fac   0x00000040   Code   RO         1561    i.initTimeOutTimer  timeouttimer.o
+    0x00000fec   0x000002a8   Code   RO            6    i.main              main.o
+    0x00001294   0x0000000c   Code   RO         1476    i.moveToHorizontally  node.o
+    0x000012a0   0x0000000c   Code   RO         1477    i.moveToVertically  node.o
+    0x000012ac   0x00000018   Code   RO         1220    i.readADC1          adc1.o
+    0x000012c4   0x0000000c   Code   RO         1478    i.readLDR           node.o
+    0x000012d0   0x00000012   Code   RO         1479    i.sendData          node.o
+    0x000012e2   0x00000002   PAD
+    0x000012e4   0x0000000c   Code   RO         1481    i.setState          node.o
+    0x000012f0   0x00000048   Code   RO         1562    i.timeOut_ms        timeouttimer.o
+    0x00001338   0x0000000a   Code   RO         2288    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x00001342   0x00000002   PAD
+    0x00001344   0x0000001c   Data   RO          141    .constdata          uartstdio.o
+    0x00001360   0x00000210   Data   RO         1701    .constdata          driverlib.lib(gpio.o)
+    0x00001570   0x0000010c   Data   RO         1983    .constdata          driverlib.lib(interrupt.o)
+    0x0000167c   0x00000011   Data   RO          142    .conststring        uartstdio.o
+    0x0000168d   0x00000003   PAD
+    0x00001690   0x00000020   Data   RO         2356    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000290, Max: 0x00008000, ABSOLUTE)
@@ -1457,7 +1456,7 @@ Image component sizes
         76          0          0          0          0       2895   i2c.o
        568        114          0          0          0       3794   i2cdriver.o
       1004        544          0          0          0       6647   main.o
-       206         58          0         26          0       4553   node.o
+       198         54          0         26          0       4915   node.o
        276         24        620          0        512       5412   startup_tm4c123.o
         52          6          0          0          0        501   sysctl.o
        152         40          0          4          0        763   system_tm4c123.o
@@ -1466,7 +1465,7 @@ Image component sizes
        790         36         45          5          0       4424   uartstdio.o
 
     ----------------------------------------------------------------------
-      3476        882        700         44        512      31873   Object Totals
+      3468        878        700         44        512      32235   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          6          0          3          5          0          0   (incl. Padding)
 
@@ -1521,15 +1520,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4320        914       1496         44        612      37258   Grand Totals
-      4320        914       1496         44        612      37258   ELF Image Totals
-      4320        914       1496         44          0          0   ROM Totals
+      4312        910       1496         44        612      37620   Grand Totals
+      4312        910       1496         44        612      37620   ELF Image Totals
+      4312        910       1496         44          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 5816 (   5.68kB)
+    Total RO  Size (Code + RO Data)                 5808 (   5.67kB)
     Total RW  Size (RW Data + ZI Data)               656 (   0.64kB)
-    Total ROM Size (Code + RO Data + RW Data)       5860 (   5.72kB)
+    Total ROM Size (Code + RO Data + RW Data)       5852 (   5.71kB)
 
 ==============================================================================
 

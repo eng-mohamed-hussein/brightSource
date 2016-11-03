@@ -105,7 +105,7 @@ int main ()
 //					isDataSent=TRUE;
 //				}
 						//----------------------------------------------
-				sendPower(currentPower);
+				sendData(currentPower);
 				UARTprintf("\ncurrent power sent\n");
 			//	isDataSent=TRUE;
 				
